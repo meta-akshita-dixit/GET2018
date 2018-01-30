@@ -13,45 +13,42 @@ import org.junit.Test;
 
 public class TestAscOrDesc 
 {
-	AscOrDesc checkSort;                 //object of the class AscOrDesc to use for further reference.
-	int arr[],arr1[],arr2[];             //three arrays for three test cases.
-	@Before
-	public void toBegin1()               //before testing the case defining the array.
-	{
-		checkSort=new AscOrDesc();
-		arr=new int[]{-1,2,3,4,5,6,7,8};
-	}
 
 	@Test
-	public void test1() {
+	public void testSuccessAsc() {
+		AscOrDesc checkSort;                 
+		int arr[]; 
+		checkSort=new AscOrDesc();
+		arr=new int[]{-1,2,3,4,5,6,7,8};
 		assertEquals(1,checkSort.ascOrDesc(arr));
 	}
 
-	@Before
-	public void toBegin2()               //before testing the case defining the array.
-	{
-		checkSort=new AscOrDesc();
-		arr1=new int[]{8,7,6,5,4,-3,2,1};
-	}
 
 	@Test
-	public void test2() {               //it fails as it is unsorted and here is being checked for descending order.
-		assertEquals(2,checkSort.ascOrDesc(arr1));
+	public void testFail() { 
+		AscOrDesc checkSort;                 
+		int arr1[]; 
+		arr1=new int[]{8,7,6,5,4,-3,2,1};
+		checkSort=new AscOrDesc();//it fails as it is unsorted and here is being checked for descending order.
+		assertNotEquals(2,checkSort.ascOrDesc(arr1));
 	}
 	
-	@Before
-	public void toBegin3()              //before testing the case defining the array.
-	{
-		checkSort=new AscOrDesc();
-		arr2=new int[]{1,2,4,5,6,7,3};
-	}
+	
 
 	@Test
-	public void test3() {
+	public void testSuccessUnsorted() {
+		AscOrDesc checkSort;                 
+		int arr2[]; 
+		arr2=new int[]{1,2,4,5,6,7,3};
+		checkSort=new AscOrDesc();
 		assertEquals(0,checkSort.ascOrDesc(arr2));
 	}
 
 }
+
+
+
+
 
 
 
