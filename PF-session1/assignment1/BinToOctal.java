@@ -1,4 +1,5 @@
 
+/
 /**
  * This class has two methods that are used to convert binary to octal.
  *
@@ -10,12 +11,13 @@ package assignment1;
 
 public class BinToOctal {
 	
+	//int decimal=0,i=0,octal=0;
 	/**
 	 * this method calculates the decimal value of triplets.
 	 * @param binary
 	 * @return
 	 */
-   int toDecimal(int binary)                      
+   static int toDecimal(int binary)                      
 	{
 		int decimal=0,i=0;
 		while(binary!=0)
@@ -31,8 +33,12 @@ public class BinToOctal {
     * @param n
     * @return
     */
-  int convertBinaryToOctal(int n)               
+  static int convertBinaryToOctal(int n)               
 	{
+	    if(n < 0)                             //negative value of n throws exception
+	    {
+	    	throw new IllegalArgumentException();
+	    }
 		int octal=0,i=0;
 		while(n!=0)
 		{
@@ -43,4 +49,6 @@ public class BinToOctal {
 		return octal;
 	}
 }
+
+
 
