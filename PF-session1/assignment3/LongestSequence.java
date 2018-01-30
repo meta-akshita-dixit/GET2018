@@ -16,6 +16,8 @@ public class LongestSequence
 	{
 		int counter=1,pos,count=0,position=0;                  
 		int size=input.length;
+		 if(size == 0)                                             //when array is empty
+			 return input;
 		for(int loopCounter=0; loopCounter < size; loopCounter++)
 		{
 			pos=loopCounter;                                   //initializing pos with loopCounter
