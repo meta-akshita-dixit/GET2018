@@ -1,4 +1,5 @@
 
+
 /**
  * This class has methods that remove duplicate elements in the given array.
  *
@@ -21,28 +22,33 @@ public class RemovingDuplicates
 			if(input[i] == input[loopCounter])           //compares with each element of the array.
 			{
 				flag = false;
+				return flag;
 			}
 		}
 		return flag;
 	}
 	public int[] removeDuplicate(int input[])
 	{
-		int i = 0;
+		int i = 0, counter = 0;
 		int size = input.length;
+		int uniqueArray[] = new int[size];              //array to store unique elements
 		while(i < size)
 		{
 			if(checkDuplicate(input,i))                 //passes array and each element's index to check if it is a duplicate element.
 			{
+				
+				uniqueArray[counter] = input[i];
 				i++;
+				counter++;
 			}
 			else
 			{
-				for(int loopCounter = i ; loopCounter < size-1; loopCounter++)
-					input[loopCounter] = input[loopCounter + 1];
-				size--;
+				i++;
+				
 			}
 		}
-		return Arrays.copyOfRange( input , 0 , size );
+		return Arrays.copyOfRange( uniqueArray , 0 , counter );
 	}
 
 }
+
