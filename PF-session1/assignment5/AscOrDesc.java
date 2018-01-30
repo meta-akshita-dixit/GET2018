@@ -1,4 +1,5 @@
 
+/
 /**
  * This class has a method that checks if the given array is unsorted,ascending or in descending order.
  *
@@ -17,8 +18,11 @@ public class AscOrDesc {
 				type=1;
 				for(position=1; position < array.length - 1; position++)
 				{
-					if(array[position] > array[position + 1])
+					if(array[position] > array[position + 1]){
 						type=0;
+						return type;
+					}
+						
 				}
 				return type;
 			}
@@ -27,9 +31,11 @@ public class AscOrDesc {
 				type=2;
 				for(position = 1; position < array.length - 1; position++)
 				{
-					if(array[position] <= array[position +1 ])
-						type = 0;
-				}
+					if(array[position] <= array[position +1 ]){
+						type=0;
+						return type;
+					}
+										}
 				return type;
 			}
 		}
