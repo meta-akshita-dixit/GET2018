@@ -7,17 +7,22 @@
 
 package assignment1;
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 
 public class TestBinToOct {
-	BinToOctal test =new BinToOctal();
 	@Test
-	public void test() {
-		assertEquals(65,test.convertBinaryToOctal(110101));
+	public void testConversionSuccess() {
+		assertEquals(65,BinToOctal.convertBinaryToOctal(110101));
 	}
 	@Test
-	public void test2() {                                            //false test case
-		assertEquals(1,test.convertBinaryToOctal(100001));
+	public void testConversionFailure() {                                            //false test case
+		assertNotEquals(1,BinToOctal.convertBinaryToOctal(100001));
 	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testConversionNegative() {                                            
+		assertNotEquals(1,BinToOctal.convertBinaryToOctal(-2));
+	}
+
 }
