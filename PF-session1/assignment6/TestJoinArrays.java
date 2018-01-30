@@ -12,9 +12,10 @@ import org.junit.Test;
 
 public class TestJoinArrays {
 
-	JoinArrays ja=new JoinArrays();//object of class JoinArrays used for invoking method join.
+	//object of class JoinArrays used for invoking method join.
 	@Test
-	public void test() {                 //test case1
+	public void testSuccess() {  
+		JoinArrays ja=new JoinArrays();//test case1
 		int a[] = {1,2,3,5,7,45,67};
 	    int asize = a.length;
 	 
@@ -23,9 +24,14 @@ public class TestJoinArrays {
 	 
 	    int c[]=new int[asize+bsize];
 	    c=ja.join(a, asize, b, bsize, c);
+	    
+	    int expArr[] = {1,2,2,3,4,5,5,6,7,8,45,55,67};
+	    assertArrayEquals(expArr,c);
+	    
 	}
 	@Test
-	public void test1() {                //test case2
+	public void testFailure() {   
+		JoinArrays ja=new JoinArrays();
 		int a[] = {1,2,3,5,7,45,67,69,99};
 	    int asize = a.length;
 	 
@@ -34,5 +40,8 @@ public class TestJoinArrays {
 	 
 	    int c[]=new int[asize+bsize];
 	    c=ja.join(a, asize, b, bsize, c);
+	    
+	    int expArr[] = {1,2,2,3,4,5,5,6,7,8,45,55,67};
+	    assertNotEquals(expArr,c);
 	}
 }
