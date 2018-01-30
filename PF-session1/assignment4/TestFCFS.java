@@ -35,7 +35,7 @@ public class TestFCFS {
 	}
 
 	@Test
-	public void test() 
+	public void testSuccess() 
 	{
 		assertTrue(isArrayEqual(expectedArr,actualArr));
 	}
