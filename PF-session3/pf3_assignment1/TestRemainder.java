@@ -6,23 +6,30 @@ import org.junit.Test;
 
 public class TestRemainder {
 
-	
-		Remainder r = new Remainder();
 		@Test
-		public void test(){
+		public void testSuccess(){
+			Remainder r = new Remainder();
 			int expectedResult = 0;
 			assertEquals(expectedResult,r.rem(2, 1));
 		}
 		@Test
-		public void test1(){
+		public void testSuccess1(){
+			Remainder r = new Remainder();
 			int expectedResult = 2;
 			assertEquals(expectedResult,r.rem(2, 0));
 		}
 		@Test
-		public void test2() {
+		public void testSucces3() {
+			Remainder r = new Remainder();
 			int expectedResult = 1;
 			assertEquals(expectedResult,r.rem(100, 3));
 		
 	}
+		@Test
+		public void testFailure(){
+			Remainder r = new Remainder();
+			int expectedResult = 2;
+			assertNotEquals(expectedResult,r.rem(20, 30));
+		}
 
 }
