@@ -6,18 +6,27 @@ import org.junit.Test;
 
 public class TestGCD {
 
-	GCD g = new GCD();
+	
 	@Test
-	public void test() {
+	public void testSuccess() {
+		GCD g = new GCD();
 		assertEquals(1,g.gcd(2, 1));
 	}
 	@Test
-	public void test1() {
+	public void testSuccess1() {
+		GCD g = new GCD();
 		assertEquals(6,g.gcd(12, 18));
 	}
 	@Test
-	public void test2() {
-		
+	public void testSuccess2() {
+		GCD g = new GCD();
 		assertEquals(1,g.gcd(100, 3));
 	}
+	
+	@Test
+	public void testFailure() {
+		GCD g = new GCD();
+		assertNotEquals(2,g.gcd(100, 3));
+	}
 }
+
