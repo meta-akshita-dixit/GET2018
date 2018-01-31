@@ -6,23 +6,33 @@ import org.junit.Test;
 
 public class TestLargestDigit 
 {
-	LargestDigit test = new LargestDigit ();
+	
 
 	@Test
-	public void test1 () 
+	public void testSuccess () 
 	{
+		LargestDigit test = new LargestDigit ();
 		assertEquals (2, test.largestDigit (2));
 	}
 
 	@Test
-	public void test2 () 
+	public void testSuccess2 () 
 	{
+		LargestDigit test = new LargestDigit ();
 		assertEquals (9, test.largestDigit (1257369));
 	}
 	
 	@Test
-	public void test3 () 
+	public void testSuccess3 () 
 	{
+		LargestDigit test = new LargestDigit ();
 		assertEquals (4, test.largestDigit (444));
+	}
+	
+	@Test
+	public void testFailure () 
+	{
+		LargestDigit test = new LargestDigit ();
+		assertNotEquals (6, test.largestDigit (444658));
 	}
 }
