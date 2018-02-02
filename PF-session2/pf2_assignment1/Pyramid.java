@@ -20,9 +20,9 @@ public class Pyramid {
 
 	/**
 	 * This method is calculating the required spaces for each row of the given pattern.
-	 * @param row
-	 * @param n
-	 * @return
+	 * @param row contains the current row number
+	 * @param n maximum number till which the pattern is increasing
+	 * @return String contating spaces for that particular row
 	 */
 	  String spaces(int row , int n)
 	  {
@@ -50,10 +50,10 @@ public class Pyramid {
 	  }
 	  
 	  /**
-		 * This method is calculating the required number string for each row of the given pattern.
-		 * @param row
-		 * @param n
-		 * @return
+	 * This method is calculating the required number string for each row of the given pattern.
+	 * @param row contains the current row number
+	 * @param n maximum number till which the pattern is increasing
+	 * @return String contating numbers for that particular row
 		 */
 	  String numbers(int row ,int n)
 	  {
@@ -97,8 +97,8 @@ public class Pyramid {
 	  
 	  /**
 	   * This method generates the final pattern using the above two methods.
-	   * @param n
-	   * @return
+	   * @param n maximum number till which the pattern is increasing
+	   * @return String array for final pattern
 	   */
 	   String[] pyramid(int n)
 	   {
