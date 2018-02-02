@@ -1,4 +1,6 @@
 
+
+package pf2_assignment2;
 /**
  * This class has three methods to generate spaces,numbers and the final pattern.
  * 12345
@@ -10,8 +12,6 @@
  * @version 1 24 Jan 2018
  * @author Akshita Dixit
  */
-package pf2_assignment2;
-
 public class Triangle {
 	
 	/**
