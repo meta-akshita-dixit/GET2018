@@ -1,4 +1,6 @@
 
+
+package pf2_assignment1;
 /**
  * This class has three methods to generate spaces,numbers and the final pattern.
  *    1
@@ -13,8 +15,6 @@
  * @version 1 24 Jan 2018
  * @author Akshita Dixit
  */
-package pf2_assignment1;
-
 public class Pyramid {
 	
 
