@@ -16,9 +16,9 @@ public class Triangle {
 	
 	/**
 	 * This method is calculating the required spaces for each row of the given pattern.
-	 * @param row
-	 * @param n
-	 * @return
+	 * @param row contains the row number on which calculaion is being performed.
+	 * @param n is maximum number of rows
+	 * @return String that returns the space string for that particular row
 	 */
 	String spaces(int row , int n)
 	  {
@@ -38,9 +38,9 @@ public class Triangle {
 	
 	/**
 	 * This method is calculating the required number string for each row of the given pattern.
-	 * @param row
-	 * @param n
-	 * @return
+	 * @param row contains the row number on which calculaion is being performed.
+	 * @param n is maximum number of rows
+	 * @return String that returns the space string for that particular row
 	 */
 	  String numbers(int row ,int n)
 	  {
@@ -60,8 +60,8 @@ public class Triangle {
 	   
 	  /**
 	   * This method generates the final pattern using the above two methods.
-	   * @param n
-	   * @return
+	   * @param n is maximum number of rows
+	   * @return String array is being returned that contains the final pattern
 	   */
 	   String[] triangle(int n)
 	   {
