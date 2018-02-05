@@ -3,7 +3,7 @@ package oop_Session3;
 /**
  * 
  * @author Akshita Dixit
- * This class depicts the transition that occurred due to the event that occurred
+ * This class depicts the transition that took place due to the event that occurred
  */
 public class Transition {
 
