@@ -62,7 +62,7 @@ public class TestWorkflow {
 	
 	@Test
 	public void test_reject_success() {
-		Event event1 = new Event("hr process");
+		Event event1 = new Event("hr  process");
 		w.transition_step(event1);
 		Event event2 = new Event("hr ok");
 		w.transition_step(event2);
