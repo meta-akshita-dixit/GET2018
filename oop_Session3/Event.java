@@ -34,7 +34,7 @@ public class Event {
 
    /**
     * method to set value of ok variable
-    * @param ok value of ok variable
+    * @param ok - value of ok variable
     */
 	public void setOk(boolean ok) {
 		this.ok = ok;
