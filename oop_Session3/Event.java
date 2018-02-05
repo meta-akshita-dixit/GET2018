@@ -60,7 +60,7 @@ public class Event {
      
 	/**
 	 * method to return the name of the event
-	 * @return eventName the event name
+	 * @return eventName name of event
 	 */
 	public String getEventName() {
 		return eventName;
