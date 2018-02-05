@@ -41,7 +41,7 @@ public class Workflow {
 
     /**
      * constructor to initialize the workflow name	
-     * @param workflow_name string having name of the workflow
+     * @param workflow_name string has the name of the workflow
      */
 	Workflow(String workflow_name){
 		this.workflow_name = workflow_name;
