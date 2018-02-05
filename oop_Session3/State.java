@@ -12,7 +12,7 @@ public class State {
 	
 	/**
 	 * constructor initializing statename
-	 * @param stateName
+	 * @param stateName name of the state
 	 */
 	State(String stateName){
 		this.stateName = stateName;
