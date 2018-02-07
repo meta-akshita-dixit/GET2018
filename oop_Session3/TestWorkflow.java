@@ -11,12 +11,16 @@ import org.junit.Test;
 
 public class TestWorkflow {
 	
+	//this object shows the complete workflow hence needs to be global
 	Workflow w = new Workflow("MetaCube hiring process");
-
+	
+	/**
+	 * This method initializes the State Linked list which is to be used in 
+	 * every test case.
+	 */
 	@Before
 	public void beginWorkflow(){
-		
-		State startState = new State("start");
+        State startState = new State("start");
 		w.addState(startState);
 		State hrReviewstate = new State("hr Review");
 		w.addState(hrReviewstate);
@@ -31,10 +35,14 @@ public class TestWorkflow {
 		w.setStartState();
 		
 	}
+	
+	/**
+	 * This test case checks if the candidate has been selected 
+	 */
 	@Test
-	public void test_selected_success() {
-		Event event1 = new Event("hr process");
+	public void testSelectedSuccess() {
 		
+		Event event1 = new Event("hr process");
 		w.transition_step(event1);
 		Event event2 = new Event("hr ok");
 		w.transition_step(event2);
@@ -47,8 +55,8 @@ public class TestWorkflow {
 		List<Transition> actual_object = w.getTransition_list();
 		List<String> actual = new ArrayList<String>() ;
 		actual.add("Selected");
-		for(Transition t : actual_object) {
-			actual.add(t.initialState.stateName + t.finalState.stateName + t.event.eventName);
+		for(Transition se : actual_object) {
+			actual.add(se.initialState.stateName + se.finalState.stateName + se.event.eventName);
 		}
 		List<String> expected = new ArrayList<String>();
 		 expected.addAll(Arrays.asList("Selected","starthr Reviewhr process" ,"hr Reviewl1 Interviewhr ok" ,
@@ -59,34 +67,11 @@ public class TestWorkflow {
 		
 	}
 
-	
+	/**
+	 * this test case shows that candidate has been rejected
+	 */
 	@Test
-	public void test_reject_success() {
-		Event event1 = new Event("hr  process");
-		w.transition_step(event1);
-		Event event2 = new Event("hr ok");
-		w.transition_step(event2);
-		Event event3 = new Event("l1 ok");
-		w.transition_step(event3);
-		Event event4 = new Event("l2 reject");
-		w.transition_step(event4);
-		
-		List<Transition> actual_object = w.getTransition_list();
-		List<String> actual = new ArrayList<String>() ;
-		actual.add("rejected");
-		for(Transition t : actual_object) {
-			actual.add(t.initialState.stateName + t.finalState.stateName + t.event.eventName);
-		}
-		List<String> expected = new ArrayList<String>();
-		 expected.addAll(Arrays.asList("rejected","starthr Reviewhr process" ,"hr Reviewl1 Interviewhr ok" ,
-				 "l1 Interviewl2 Interviewl1 ok" , "l2 Interviewl2 Interviewl2 reject"));
-		assertEquals(expected,actual);
-		
-		
-	}
-	
-	@Test
-	public void test_reject_failure() {
+	public void testRejectedSuccess() {
 		Event event1 = new Event("hr process");
 		w.transition_step(event1);
 		Event event2 = new Event("hr ok");
@@ -99,17 +84,47 @@ public class TestWorkflow {
 		List<Transition> actual_object = w.getTransition_list();
 		List<String> actual = new ArrayList<String>() ;
 		actual.add("rejected");
-		for(Transition t : actual_object) {
-			actual.add(t.initialState.stateName + t.finalState.stateName + t.event.eventName);
+		for(Transition se : actual_object) {
+			actual.add(se.initialState.stateName + se.finalState.stateName + se.event.eventName);
+		}
+		List<String> expected = new ArrayList<String>();
+		 expected.addAll(Arrays.asList("rejected","starthr Reviewhr process" ,"hr Reviewl1 Interviewhr ok" ,
+				 "l1 Interviewl2 Interviewl1 ok" , "l2 Interviewl2 Interviewl2 reject"));
+		assertEquals(expected,actual);
+		
+		
+	}
+	
+	/**
+	 * this test case is a negative test case for rejection
+	 */
+	@Test
+	public void testRejectFailure() {
+		Event event1 = new Event("hr process");
+		w.transition_step(event1);
+		Event event2 = new Event("hr ok");
+		w.transition_step(event2);
+		Event event3 = new Event("l1 ok");
+		w.transition_step(event3);
+		Event event4 = new Event("l2 reject");
+		w.transition_step(event4);
+		
+		List<Transition> actual_object = w.getTransition_list();
+		List<String> actual = new ArrayList<String>() ;
+		actual.add("rejected");
+		for(Transition se : actual_object) {
+			actual.add(se.initialState.stateName + se.finalState.stateName + se.event.eventName);
 		}
 		List<String> expected = new ArrayList<String>();
 		 expected.addAll(Arrays.asList());
 		assertNotEquals(expected,actual);
-		
-		
-	}
+		}
+	
+	/**
+	 * this test case shows the exception test that can occur
+	 */
 	@Test(expected=NullPointerException.class)
-	public void test_exception() {
+	public void testException() {
 		Event event1 = new Event(null);
 		w.transition_step(event1);
 		Event event2 = new Event("hr ok");
@@ -122,8 +137,8 @@ public class TestWorkflow {
 		List<Transition> actual_object = w.getTransition_list();
 		List<String> actual = new ArrayList<String>() ;
 		actual.add("rejected");
-		for(Transition t : actual_object) {
-			actual.add(t.initialState.stateName + t.finalState.stateName + t.event.eventName);
+		for(Transition se : actual_object) {
+			actual.add(se.initialState.stateName + se.finalState.stateName + se.event.eventName);
 		}
 		List<String> expected = new ArrayList<String>();
 		 expected.addAll(Arrays.asList());
