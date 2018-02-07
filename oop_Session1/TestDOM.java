@@ -38,8 +38,12 @@ public class TestDOM {
 	 		dom.add(img1);
 	 		div1.add(img2);
 	 	}
+	 	
+	 	/**
+	 	 * test case for finding the tag by classname
+	 	 */
 	 	@Test
-	 	public void className_test_success() {
+	 	public void searchByClassNameSuccess() {
 	 		
 	 		List<Element> actual2 = dom.findElementByClass("abcd");
 	 		List<String> result = new ArrayList<String>();
@@ -52,8 +56,11 @@ public class TestDOM {
 	 		
 	 	}
 	 	
+	 	/**
+	 	 * negative test case for finding the tag by classname
+	 	 */
 	 	@Test
-	 	public void className_test_failure() {
+	 	public void searchByClassNameFailure() {
 	 		
 	 		List<Element> actual2 = dom.findElementByClass("abcd");
 	 		List<String> result = new ArrayList<String>();
@@ -65,41 +72,48 @@ public class TestDOM {
 	 		assertNotEquals(expected,result);
 	 		
 	 	}
+	 	
+	 	/**
+	 	 * test case for finding the tag by id
+	 	 */
 	 	@Test
-	 	public void id_Test_Success() {
+	 	public void searchByIdSuccess() throws Exception {
 	 		
-	 		String actual = dom.findElementByID("3").getClass().getSimpleName();
-	 		String expected = "Img" ;
-	 		assertEquals(expected,actual);
+	 		assertEquals("Img",dom.findElementByID("3").getClass().getSimpleName());
 	 		
 	 	}
 	 	
+	 	/**
+	 	 * negative test case for finding the tag by id
+	 	 */
 	 	@Test
-	 	public void id_Test_Failure() {
+	 	public void searchByIdFailure() throws Exception {
 	 		
-	 		String actual = dom.findElementByID("3").getClass().getSimpleName();
-	 		String expected = "   " ;
-	 		assertNotEquals(expected,actual);
+	 		assertNotEquals(" ",dom.findElementByID("3").getClass().getSimpleName());
 	 		
 	 	}
 	 	
-		@Test (expected=ArithmeticException.class)
-	 	public void id_Test_Exception() {
-	 		
-	 		String actual = dom.findElementByID("-1").getClass().getSimpleName();
-	 		String expected = "    " ;
-	 		assertEquals(expected,actual);
+	 	/**
+	 	 * this test case handles exception to the entered id
+	 	 * @throws Exception
+	 	 */
+		@Test (expected=Exception.class)
+	 	public void id_Test_Exception() throws Exception {
+			
+	 	      assertEquals(null,dom.findElementByID(null).getClass().getSimpleName());
 	 		
 	 	}
+		/**
+		 * test case for checking the hierarchy
+		 */
 	 	@Test
-	 	public void test_Hierarchy() {
+	 	public void testHierarchyPatternSuccess() {
 	 		
 	 		List<String> expected= new ArrayList<String>();
 	 		expected.addAll(Arrays.asList("<Div id='1'>","    <Div id='0'>","        <A id='9'>","        <Div id='4'>",
 	 									  "            <Img id='6'>","        </Div>","    </Div>","    <Img id='8'>",
 	 									  "</Div>","<Img id='3'>" ));
-	 		List<String> actual = dom.displayDOM();
-	 		assertEquals(expected,actual);
+	 		assertEquals(expected,dom.displayDOM());
 	 		
 	 	}
 	 
