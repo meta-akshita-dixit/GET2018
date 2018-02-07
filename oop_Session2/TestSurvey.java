@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,23 +18,20 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TestSurvey {
-	/*creating all necessary instances*/
-	private static List<Participant> participantList ;
-	private static IOFile read ;
-	private static List<Question> questionList ;
-	private static Participant p1 ;
-	private static Participant p2 ;
-	private static Participant p3 ;
-	static int count = 0;
-	
-	@BeforeClass
+
+	@Test
 	/**
-	 * Function that performs all operations before the participants answers the question
-	 * operations include -
-	 * reading the question and storing it
-	 * creation of participants
+	 * This function simulates the test given by the participants
+	 * it also calculates the result and compares it with the expected result
 	 */
-	 public static void doBefore() {
+	public void test1PercentageSuccess() {
+		 List<Participant> participantList ;
+		 IOFile read ;
+		 List<Question> questionList ;
+		 Participant p1 ;
+		 Participant p2 ;
+		 Participant p3 ;
+		
 		participantList = new ArrayList<>();
 		read = new IOFile("C:\\Users\\admin\\workspace\\OOP\\src\\oop_Session2\\input.txt");
 		try {
@@ -48,16 +46,6 @@ public class TestSurvey {
 		participantList.add(p1);
 		participantList.add(p2);
 		participantList.add(p3);
-	}
-	
-
-	@Test
-	/**
-	 * This function simulates the test given by the participants
-	 * it also calculates the result and compares it with the expected result
-	 */
-	public void test1PercentageSuccess() {
-		System.out.println(count++);
 		String[] arr1 = new String[] {"1","communication","feedback"};						//Answers by 1st participant
 		String[] arr2 = new String[] {"2","communication/Delivery Process","feedback correct"};	//Answers by 2nd participant		
 		String[] arr3 = new String[] {"2","communication/Delivery Process","feedback given"};	//Answers by 3rd participant
@@ -114,13 +102,35 @@ public class TestSurvey {
 	 * it also calculates the result and compares it with the expected result
 	 */
 	public void test2SortSuccess() {
-		System.out.println(count++);
-		List<Question> questionLis ;
+		 List<Participant> participantList ;
+		 IOFile read ;
+		 List<Question> questionList ;
+		 Participant p1 ;
+		 Participant p2 ;
+		 Participant p3 ;
+		
+		participantList = new ArrayList<>();
+		read = new IOFile("C:\\Users\\admin\\workspace\\OOP\\src\\oop_Session2\\input.txt");
+		try {
+			read.readQuestion();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		questionList = read.getQuestionList();
+		p1 = new Participant();
+		p2 = new Participant();
+		p3 = new Participant();
+		participantList.add(p1);
+		participantList.add(p2);
+		participantList.add(p3);
+		String[] arr1 = new String[] {"1","communication","feedback"};						//Answers by 1st participant
+		String[] arr2 = new String[] {"2","communication/Delivery Process","feedback correct"};	//Answers by 2nd participant		
+		String[] arr3 = new String[] {"2","communication/Delivery Process","feedback given"};	//Answers by 3rd participant
 		SortQuestion s = new SortQuestion();
-		questionLis = s.sortQuestion(questionList);
+		questionList = s.sortQuestion(questionList);
 		List <String> actual = new ArrayList<String>();
 		List <String> expected = new ArrayList<String>();
-		for(Question q : questionLis){
+		for(Question q : questionList){
 			actual.add(q.getType() + ", " + q.getQuestion() + ", " +q.getQuestionOptions());
 		}
 		expected.addAll(Arrays.asList("multi, Areas of improvement, Service Quality/Communication/Delivery Process",
@@ -135,7 +145,30 @@ public class TestSurvey {
 	 * it also calculates the result and compares it with the expected result
 	 */
 	public void test3SortFailure() {
-		System.out.println(count++);
+		 List<Participant> participantList ;
+		 IOFile read ;
+		 List<Question> questionList ;
+		 Participant p1 ;
+		 Participant p2 ;
+		 Participant p3 ;
+		
+		participantList = new ArrayList<>();
+		read = new IOFile("C:\\Users\\admin\\workspace\\OOP\\src\\oop_Session2\\input.txt");
+		try {
+			read.readQuestion();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		questionList = read.getQuestionList();
+		p1 = new Participant();
+		p2 = new Participant();
+		p3 = new Participant();
+		participantList.add(p1);
+		participantList.add(p2);
+		participantList.add(p3);
+		String[] arr1 = new String[] {"1","communication","feedback"};						//Answers by 1st participant
+		String[] arr2 = new String[] {"2","communication/Delivery Process","feedback correct"};	//Answers by 2nd participant		
+		String[] arr3 = new String[] {"2","communication/Delivery Process","feedback given"};	//Answers by 3rd participant
 		List<Question> questionList1;
 		SortQuestion s1 = new SortQuestion();
 		questionList1 = s1.sortQuestion(questionList);
@@ -153,10 +186,50 @@ public class TestSurvey {
 	 * This function compares the output files with the expected results
 	 */
 	public void testFileSuccess() {
+		List<Participant> participantList ;
+		 IOFile read ;
+		 List<Question> questionList ;
+		 Participant p1 ;
+		 Participant p2 ;
+		 Participant p3 ;
+		
+		participantList = new ArrayList<>();
+		read = new IOFile("C:\\Users\\admin\\workspace\\OOP\\src\\oop_Session2\\input.txt");
+		try {
+			read.readQuestion();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		questionList = read.getQuestionList();
+		p1 = new Participant();
+		p2 = new Participant();
+		p3 = new Participant();
+		participantList.add(p1);
+		participantList.add(p2);
+		participantList.add(p3);
+		String[] arr1 = new String[] {"1","communication","feedback"};						//Answers by 1st participant
+		String[] arr2 = new String[] {"2","communication/Delivery Process","feedback correct"};	//Answers by 2nd participant		
+		String[] arr3 = new String[] {"2","communication/Delivery Process","feedback given"};	//Answers by 3rd participant
+		int i = 0;
+		//System.out.println("enter loop");
+		for (Question q : questionList){
+			p1.setParticipantAnswer(q, arr1[i]);
+			p2.setParticipantAnswer(q, arr2[i]);
+			p3.setParticipantAnswer(q, arr3[i++]);
+		}
+		try {
+			read.writeAnswer(participantList);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		List<String> expected = new ArrayList<String>();
 		List<String> actual = new ArrayList<String>();
 		expected.addAll(Arrays.asList("Participant 1, 1, communication, feedback","Participant 2, 2, communication/Delivery Process, feedback correct","Participant 3, 2, communication/Delivery Process, feedback given"));
-		File file = new File("C:\\Users\\admin\\workspace\\OOPS-session2\\src\\assignment_1\\participant-Result.txt");
+		File file = new File("C:\\Users\\admin\\workspace\\OOP\\src\\oop_Session2\\participant-Result.txt");
 		Scanner scanner;
 		try {
 			scanner = new Scanner (file);
