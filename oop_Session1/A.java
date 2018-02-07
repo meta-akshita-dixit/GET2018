@@ -1,9 +1,9 @@
 package oop_Session1;
 /**
- * 
+ *  Anchor is a HTML tag, in this we denote Anchor as "A"
+ *  Anchor is type of Atomic Element
  * @author Akshita Dixit
- * Anchor is a HTML tag, in this we denote Anchor as "A"
- * Anchor is type of Atomic Element
+ *
  */
 public class A extends AtomicElement {
 	
