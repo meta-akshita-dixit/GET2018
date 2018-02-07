@@ -1,10 +1,7 @@
 package oop_Session1;
-
-
 /**
- * 
- * @author Akshita Dixit
  * Abstract class which contains methods to find details of tag
+ * @author Akshita Dixit
  */
 abstract class Element {
 	
@@ -14,7 +11,11 @@ abstract class Element {
 	// class of tag
 	String className;
 	
-	// Constructor for initializing values
+	/**
+	 * Constructor for initializing values
+	 * @param id - id of the tag
+	 * @param className - name of the class of the tag
+	 */
 	public Element(String id, String className) {
 		
 		// initializing id
@@ -24,19 +25,28 @@ abstract class Element {
 		this.className = className;
 	}
 	
-	// returns id of a particular tag
+	/**
+	 * returns id of a particular tag
+	 * @return id of the tag
+	 */
 	public String getId() {
 		
 		return id;
 	}
 	
-	// returns class name of a particular tag
+	/**
+	 * returns class name of a particular tag
+	 * @return classname of the tag
+	 */
 	public String getClassName() {
 		
 		return className;
 	}
 
-	// for checking instance of element
+	/**
+	 * for checking instance of element
+	 * @return
+	 */
 	public boolean has_instance() {
 		
 		// by default value is false
