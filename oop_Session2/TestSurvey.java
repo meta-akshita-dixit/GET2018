@@ -5,18 +5,15 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestSurvey {
@@ -75,15 +72,12 @@ public class TestSurvey {
 		//Calculation of the percentage for every option selected
 		//this loop is for the number of total participants
 		for(Participant p : participantList){
-			System.out.println(p.getAnswerList());
 			//loop to iterate through all questions for a particular participant
 			for(Entry<Question, String> m : p.getAnswerList().entrySet()){
-		//System.out.println(m.getKey().getQuestion()+" and "+m.getKey().getType()+" and "+m.getValue());
 				Question ques = m.getKey();
 				if(ques.getType().equalsIgnoreCase("single")){
 					List<String> list = ques.getQuestionType().getOptions();
 					for(String s : list){
-						//ystem.out.println(s);
 						if(s.equalsIgnoreCase((String) m.getValue())){
 							ques.getResultObject().setResult(s);
 						}
@@ -110,7 +104,6 @@ public class TestSurvey {
 				actual.put(i++, (LinkedHashMap<String, String>) (q.getResultObject().getResultPercentage()));
 			}
 		}
-		System.out.println(actual);
 		/*Checks if the final answer is true*/
 		assertTrue(expected.equals(actual));
 	}
