@@ -47,8 +47,8 @@ public class TestWorkflow {
 		List<Transition> actual_object = w.getTransition_list();
 		List<String> actual = new ArrayList<String>() ;
 		actual.add("Selected");
-		for(Transition se : actual_object) {
-			actual.add(se.initialState.stateName + se.finalState.stateName + se.event.eventName);
+		for(Transition t : actual_object) {
+			actual.add(t.initialState.stateName + t.finalState.stateName + t.event.eventName);
 		}
 		List<String> expected = new ArrayList<String>();
 		 expected.addAll(Arrays.asList("Selected","starthr Reviewhr process" ,"hr Reviewl1 Interviewhr ok" ,
@@ -74,8 +74,8 @@ public class TestWorkflow {
 		List<Transition> actual_object = w.getTransition_list();
 		List<String> actual = new ArrayList<String>() ;
 		actual.add("rejected");
-		for(Transition se : actual_object) {
-			actual.add(se.initialState.stateName + se.finalState.stateName + se.event.eventName);
+		for(Transition t : actual_object) {
+			actual.add(t.initialState.stateName + t.finalState.stateName + t.event.eventName);
 		}
 		List<String> expected = new ArrayList<String>();
 		 expected.addAll(Arrays.asList("rejected","starthr Reviewhr process" ,"hr Reviewl1 Interviewhr ok" ,
@@ -99,8 +99,8 @@ public class TestWorkflow {
 		List<Transition> actual_object = w.getTransition_list();
 		List<String> actual = new ArrayList<String>() ;
 		actual.add("rejected");
-		for(Transition se : actual_object) {
-			actual.add(se.initialState.stateName + se.finalState.stateName + se.event.eventName);
+		for(Transition t : actual_object) {
+			actual.add(t.initialState.stateName + t.finalState.stateName + t.event.eventName);
 		}
 		List<String> expected = new ArrayList<String>();
 		 expected.addAll(Arrays.asList());
@@ -122,8 +122,8 @@ public class TestWorkflow {
 		List<Transition> actual_object = w.getTransition_list();
 		List<String> actual = new ArrayList<String>() ;
 		actual.add("rejected");
-		for(Transition se : actual_object) {
-			actual.add(se.initialState.stateName + se.finalState.stateName + se.event.eventName);
+		for(Transition t : actual_object) {
+			actual.add(t.initialState.stateName + t.finalState.stateName + t.event.eventName);
 		}
 		List<String> expected = new ArrayList<String>();
 		 expected.addAll(Arrays.asList());
