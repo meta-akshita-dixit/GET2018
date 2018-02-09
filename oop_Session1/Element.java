@@ -1,4 +1,6 @@
 package oop_Session1;
+
+
 /**
  * Abstract class which contains methods to find details of tag
  * @author Akshita Dixit
@@ -47,7 +49,7 @@ abstract class Element {
 	 * for checking instance of element
 	 * @return
 	 */
-	public boolean has_instance() {
+	public boolean hasInstance() {
 		
 		// by default value is false
 		return false;
@@ -55,3 +57,4 @@ abstract class Element {
 
 		
 }
+
