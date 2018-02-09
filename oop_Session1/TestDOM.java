@@ -98,7 +98,7 @@ public class TestDOM {
 	 	 * @throws Exception
 	 	 */
 		@Test (expected=Exception.class)
-	 	public void id_Test_Exception() throws Exception {
+	 	public void idTestException() throws Exception {
 			
 	 	      assertEquals(null,dom.findElementByID(null).getClass().getSimpleName());
 	 		
