@@ -109,16 +109,16 @@ public class DOM{
 		}
 	
 		// check if tagInList is a composite element or not
-		if(tag.has_instance()) {
+		if(tag.hasInstance()) {
 			
 			// recursive call for checking list of tagInList element
-			Element return_tag = checkIdInComposite(tag, id);
+			Element returnTag = checkIdInComposite(tag, id);
 			
 			// checks if return_tag is null or not
-			if (return_tag != null){
+			if (returnTag != null){
 				
 				// returns tag
-				return return_tag;
+				return returnTag;
 			}
 		}
 		
@@ -172,7 +172,7 @@ public class DOM{
 		}  
 		
 		//checks instance
-		if(tag.has_instance()) {
+		if(tag.hasInstance()) {
 			
 			// calling recursive function to check list if composite element
 			list.addAll( checkClassInComposite(tag, className) );
@@ -217,7 +217,7 @@ public class DOM{
 		for (Element tag : element) {
 			
 			// checks instance of composite element
-			if(tag.has_instance()){
+			if(tag.hasInstance()){
 				hierarchy.add("<" + tag.getClass().getSimpleName() + " id='"+tag.getId()+"'>");
 				hierarchy.addAll( displayDomRecursive(tag, 1) );
 				hierarchy.add("</" + tag.getClass().getSimpleName() + ">");
@@ -244,12 +244,12 @@ public class DOM{
 		for (Element ele : ((CompositeElement) tag).tagList()) {
 			
 			// checks instance of composite element
-			if(ele.has_instance()){
-				hierarchy.add(generate_spaces(count)+"<" + ele.getClass().getSimpleName() + " id='"+ele.getId()+"'>");
+			if(ele.hasInstance()){
+				hierarchy.add(generateSpaces(count)+"<" + ele.getClass().getSimpleName() + " id='"+ele.getId()+"'>");
 				hierarchy.addAll( displayDomRecursive(ele, count + 1) );
-				hierarchy.add(generate_spaces(count)+"</" + ele.getClass().getSimpleName() + ">");
+				hierarchy.add(generateSpaces(count)+"</" + ele.getClass().getSimpleName() + ">");
 			} else {
-				hierarchy.add(generate_spaces(count)+"<" + ele.getClass().getSimpleName() + " id='"+ele.getId()+"'>");
+				hierarchy.add(generateSpaces(count)+"<" + ele.getClass().getSimpleName() + " id='"+ele.getId()+"'>");
 			}
 		}
 		
@@ -261,7 +261,7 @@ public class DOM{
 	 * @param count- counts spaces
 	 * @return string of spaces
 	 */
-	protected String generate_spaces(int count){
+	protected String generateSpaces(int count){
 		
 		String space="";
 		
