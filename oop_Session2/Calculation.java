@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 /**
  * This class is responsible to calculate the percent of how many times 
  * a particular option is selected by the participants
- * @author 
+ * @author Akshita Dixit
  */
 public class Calculation {
 	
