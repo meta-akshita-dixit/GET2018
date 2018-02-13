@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 
 /**
  * this class represents the participants with their answers
- * @author 
+ * @author Akshita Dixit
  *
  */
 public class Participant {
@@ -21,7 +21,7 @@ public class Participant {
 	}
 
 	/**
-	 * method to gt answer list
+	 * method to get answer list
 	 * @return answerList - list of answers with respect to question
 	 */
 	public HashMap<Question, String> getAnswerList () {
