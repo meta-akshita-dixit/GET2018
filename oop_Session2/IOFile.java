@@ -12,7 +12,7 @@ import java.util.Scanner;
 /**
  * This class has two functions ,one is to read the questions from the input file
  * and the second is to write the expected result in the output file.
- * @author 
+ * @author Akshita Dixit
  *
  */
 public class IOFile {
