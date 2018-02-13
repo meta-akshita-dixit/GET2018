@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * this class represents the questions that have been fetched from input file
- * @author 
+ * @author Akshita Dixit
  *
  */
 public class Question {
@@ -53,13 +53,13 @@ public class Question {
 	 */
 	private List<String> getOptionList(String questionOptions){
 		Scanner scannerOption = new Scanner(questionOptions).useDelimiter("/");
-		List<String> list = new ArrayList<>();
+		List<String> listOfOptions = new ArrayList<>();
 		
 		/* tokenize option list*/
 		while (scannerOption.hasNext()) {
-			list.add(scannerOption.next());
+			listOfOptions.add(scannerOption.next());
 		}
-		return list;
+		return listOfOptions;
 	}
 
 	/**
