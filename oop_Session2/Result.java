@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * to store the calculated result for each question 
- * @author 
+ * @author Akshita Dixit
  *
  */
 public class Result {
@@ -26,9 +26,9 @@ public class Result {
 	 * method to initialize the result hasmap
 	 * @param optionList- list of options
 	 */
-	public void initialize(List<String> optionList){
+	public void initialize(List<String> optionsList){
 		
-		for(String s : optionList){
+		for(String s : optionsList){
 			this.result.put(s, 0);
 		}
 	}
