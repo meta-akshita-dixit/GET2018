@@ -5,18 +5,18 @@ import java.util.List;
 
 /**
  * class representing the type of the question 
- * @author 
+ * @author Akshita Dixit
  *
  */
 public class Type {
-	private List<String> optionList = new ArrayList<>();
+	private List<String> optionsList = new ArrayList<>();
 	
 	/**
 	 * Constructor
 	 * @param options - list of options
 	 */
 	public Type (List<String> options){
-		this.optionList = options;
+		this.optionsList = options;
 	}
 
 	/**
@@ -24,6 +24,6 @@ public class Type {
 	 * @return optionList - option list
 	 */
 	public List<String> getOptions() {
-		return this.optionList;
+		return this.optionsList;
 	}
 }
