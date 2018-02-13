@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * this class sorts the questions in the question list using selection sort algorithm
- * @author 
+ * @author Akshita Dixit
  *
  */
 public class SortQuestion {
@@ -16,7 +16,7 @@ public class SortQuestion {
 	 * @return list - sorted list
 	 */
 	public List<Question> sortQuestion(List<Question> questionList){
-		List<Question> list = new ArrayList<>();
+		List<Question> listOfQuestions = new ArrayList<>();
 			
 		/*Sort the question using selection sort concept*/
 		for(int i = 0; i < questionList.size() - 1; i++){
@@ -31,11 +31,11 @@ public class SortQuestion {
 					tempQuestion = questionList.get(j);
 				}
 			}
-			list.add(tempQuestion);				//add smallest element in the list
+			listOfQuestions.add(tempQuestion);				//add smallest element in the list
 			questionList.remove(tempQuestion);
 		}
-		list.addAll(questionList);				//add remaining element to the list
-		return list;
+		listOfQuestions.addAll(questionList);				//add remaining element to the list
+		return listOfQuestions;
 	}
 }
 
