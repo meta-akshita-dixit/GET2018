@@ -5,7 +5,6 @@ import java.util.List;
 /**
  * This class represents the multiple type questions extending the class Type  
  * @author Akshita Dixit
- *
  */
 public class Multi extends Type {
 	
