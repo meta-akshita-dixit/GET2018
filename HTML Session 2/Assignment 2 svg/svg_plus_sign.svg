@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="200" height="200">
+  
+   <circle cx="100" cy="100" r="100"  fill="#EFF637" />
+   <polygon points ="90,10 110,10 110,90 190,90 190,110 110,110 110,190 90,190 90,90 10,90 10,110 90,110" fill="white" />
+</svg>

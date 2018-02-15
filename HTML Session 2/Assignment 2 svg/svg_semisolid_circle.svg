@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="200" height="200">
+  
+    <path d="M100 0 a1 1 0 0 0 0 200"  fill="#2CA5EC" />
+    <path d="M100 5 a1 1 0 0 1 0 190"  fill="white" stroke="grey" stroke-width="10"/>
+</svg>
