@@ -20,7 +20,7 @@ public class Event {
 	 * constructor initializing the 
 	 * @param eventName name of the event
 	 */
-	Event(String eventName){
+	public Event(String eventName){
 		this.eventName = eventName;
 	}
 	
