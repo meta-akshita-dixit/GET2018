@@ -14,7 +14,7 @@ public class State {
 	 * constructor initializing statename
 	 * @param stateName name of the state
 	 */
-	State(String stateName){
+	public State(String stateName){
 		this.stateName = stateName;
 	}
 	
