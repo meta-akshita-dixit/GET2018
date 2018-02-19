@@ -6,10 +6,11 @@ import java.util.Scanner;
 
 /**
  * this class represents the questions that have been fetched from input file
+ * and implements Comparable interface to compare questions in the file.
  * @author Akshita Dixit
  *
  */
-public class Question {
+public class Question implements Comparable<Question> {
 	private String question;
 	private String type;
 	private Type questionType;
@@ -100,5 +101,11 @@ public class Question {
 	 */
 	public String getQuestionOptions() {
 		return this.questionOptions;
+	}
+
+	@Override
+	public int compareTo(Question ques)
+	{
+		return this.question.compareTo(ques.question);
 	}
 }
