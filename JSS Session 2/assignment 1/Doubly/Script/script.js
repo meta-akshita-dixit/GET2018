@@ -8,30 +8,24 @@ var last = null;
  */
 function createNode() 
 {
-	var data = document.getElementById('data').value;
-	if(data != "") 
+    var data = document.getElementById('data').value;
+    if(data != "") {
+	var node = new Object();
+	node.data = data;
+	document.getElementById('data').value = "";
+	node.next =  null;
+	node.previous = last;
+	if(first == null) 
 	{
-		var node = new Object();
-		node.data = data;
-		document.getElementById('data').value = "";
-		node.next =  null;
-		node.previous = last;
-		if(first == null) 
-		{
-			first = node;
-		}
-		else 
-		{
-			last.next = node;
-		}
-		last = node;
+		first = node;
+	} else {
+		last.next = node;
 	}
-  
-	else 
-	{
-		alert("data can't be empty");
-	}
-}
+	last = node;
+    } else {
+	alert("data can't be empty");
+        }
+ }
 
 /*Method to create a div and add elements to it using next pointer*/
 function printForward() 
@@ -41,19 +35,18 @@ function printForward()
 	tag.innerHTML = "";
 	while(temp != null)
 	{
-		var div = document.createElement("div");
-		
-		//styling for the div created 
-		div.style.border = "solid 1px black";
-		div.style.display = "inline-block";
-		div.style.margin = "10px";
-		div.style.padding = "10px";
-		var tempNode = document.createTextNode(temp.data);
-		div.appendChild(tempNode);
-		tag.appendChild(div);
-		temp = temp.next;
+	   var div = document.createElement("div");
+	   //styling for the div created 
+	   div.style.border = "solid 1px black";
+	   div.style.display = "inline-block";
+	   div.style.margin = "10px";
+	   div.style.padding = "10px";
+	   var tempNode = document.createTextNode(temp.data);
+	   div.appendChild(tempNode);
+	   tag.appendChild(div);
+	   temp = temp.next;
+	  }
 	}
-}
  
 /*Method to create a div and add elements to it using previous pointer*/
 function printBackward() 
@@ -63,14 +56,14 @@ function printBackward()
 	tag.innerHTML = "";
     while(temp != null)
 	{
-		var div = document.createElement("div");
-		div.style.border = "solid 1px black";
-		div.style.display = "inline-block";
-		div.style.margin = "10px";
-		div.style.padding = "10px";
-		var tempNode = document.createTextNode(temp.data);
-		div.appendChild(tempNode);
-		tag.appendChild(div);
-		temp = temp.previous;
+	  var div = document.createElement("div");
+	  div.style.border = "solid 1px black";
+	  div.style.display = "inline-block";
+	  div.style.margin = "10px";
+	  div.style.padding = "10px";
+	  var tempNode = document.createTextNode(temp.data);
+	  div.appendChild(tempNode);
+	  tag.appendChild(div);
+	  temp = temp.previous;
     }
 }
