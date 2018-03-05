@@ -5,24 +5,24 @@ var last = null; // linked list
 function createNode() 
 {
 	var data = document.getElementById('data').value;
+	//if the user has entered the data
 	if(data != "") 
 	{
+		//creating new object 
 		var node = new Object();
+		//initializing node values
 		node.data = data;
 		node.next =  null;
+		//for the first node
 		if(first == null) 
 		{
 			first = node;
-		}
-		else 
-		{
+		} else {
 			last.next = node;
 		}
 		last = node;
 		document.getElementById('data').value = "";
-	}
-	else 
-	{
+	} else {
 		alert("data can't be empty");
 	}
 }
@@ -31,7 +31,8 @@ function createNode()
 function printList() 
 {
 	var temp = first;
-	var tag = document.getElementById('print');
+	//to get element having id print
+	var tag = document.getElementById("print");
 	tag.innerHTML = "";
 	while(temp != null)
 	{
