@@ -13,7 +13,7 @@
 	  the displayed image on clicking the button */
 	btn.onclick = function () {
 		//if the text on button is darken
-		if ( btn.getAttribute ('class') == 'dark'){
+		if ( btn.getAttribute ('class') == 'dark') {
 			
 			//changes the class of button to light
 			btn.setAttribute ('class', 'light');
@@ -23,7 +23,7 @@
 			
 			//darkens the displayed image
 			document.querySelector ('.overlay').style.background = 'rgba(0,0,0,.5)';
-		} else{
+		} else {
 			
 			//changes the class of button to dark
 			btn.setAttribute ('class', 'dark');
