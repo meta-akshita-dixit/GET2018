@@ -6,11 +6,11 @@
  */
 function removeDuplicate() {
 	//variable to store the input string
-	var inputString = document.getElementById('string').value;
+	var inputString = document.getElementById("string").value;
 	//variable to store the output string returned by method remove
 	var outputString = remove(inputString);
 	//to get tag using id
-	var tag = document.getElementById('print');
+	var tag = document.getElementById("print");
 	tag.innerHTML = outputString;
 }
 
