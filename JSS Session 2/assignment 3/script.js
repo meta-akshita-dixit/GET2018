@@ -11,7 +11,7 @@ var rear = -1;
  *method to enqueue new element in the queue
  */
 function enqueue() {
-    var data = document.getElementById('data').value;
+    var data = document.getElementById("data").value;
     if(data != "" && rear <= 100) {
     if(front == -1 && rear == -1) {
 	  front = 0;
@@ -20,7 +20,7 @@ function enqueue() {
           rear++;
     }
     queue[rear] = data;
-    document.getElementById('data').value="";
+    document.getElementById("data").value="";
   } else { //error in adding new element
     alert("Element can't be enqueued either because of data is empty or queue is full");
   }
@@ -33,16 +33,16 @@ function dequeue() {
       alert("queue is empty");
     } else {
       data = queue[front++];
-      document.getElementById('show').innerHTML = data;
+      document.getElementById("show").innerHTML = data;
     }
   }
 /**
  *method to show the elements of the queue
  */
 function showQueue() {
-     document.getElementById('show').innerHTML = "";
+     document.getElementById("show").innerHTML = "";
      //loop to display the elements
      for(var loopCounter = front; loopCounter <= rear; loopCounter++){
-		document.getElementById('show').innerHTML += queue[loopCounter]+"   ";
+		document.getElementById("show").innerHTML += queue[loopCounter] + "   ";
      }
 }
