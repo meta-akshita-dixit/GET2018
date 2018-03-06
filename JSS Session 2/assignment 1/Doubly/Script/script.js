@@ -8,11 +8,11 @@ var last = null;
  */
 function createNode() 
 {
-    var data = document.getElementById('data').value;
+    var data = document.getElementById("data").value;
     if(data != "") {
 	var node = new Object();
 	node.data = data;
-	document.getElementById('data').value = "";
+	document.getElementById("data").value = "";
 	node.next =  null;
 	node.previous = last;
 	if(first == null) 
@@ -31,7 +31,7 @@ function createNode()
 function printForward() 
 {
 	var temp = first;
-	var tag = document.getElementById('print');
+	var tag = document.getElementById("print");
 	tag.innerHTML = "";
 	while(temp != null)
 	{
@@ -52,7 +52,7 @@ function printForward()
 function printBackward() 
 {
     var temp = last;
-	var tag = document.getElementById('print');
+	var tag = document.getElementById("print");
 	tag.innerHTML = "";
     while(temp != null)
 	{
