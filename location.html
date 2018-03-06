@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
+<!--header starts-->
 <head>
 	<title>Geolocation API</title>
 	<meta name = "author" content = "Akshita Dixit">
-</head>
-<body>
-	<p>Click the button to get your co-ordinates.</p>
-	<button onclick="getLocation()">Try It</button>
-	<p id="demo"></p>
-
+	
+	<!--script for web page-->
 	<script>
 		var x = document.getElementById("demo");
 
@@ -26,5 +23,13 @@
 			x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
 		}
 	</script>
+</head>
+	
+<!--body starts-->
+<body>
+	<p>Click the button to get your co-ordinates.</p>
+	<button onclick="getLocation()">Try It</button>
+	<p id="demo"></p>
+
 </body>
 </html>
