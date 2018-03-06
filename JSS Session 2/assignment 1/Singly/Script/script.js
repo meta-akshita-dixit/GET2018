@@ -4,7 +4,7 @@ var last = null; // linked list
 /*Method to create and add nodes to the list*/
 function createNode() 
 {
-	var data = document.getElementById('data').value;
+	var data = document.getElementById("data").value;
 	//if the user has entered the data
 	if(data != "") 
 	{
@@ -17,11 +17,11 @@ function createNode()
 		if(first == null) 
 		{
 			first = node;
-		} else {
+		} else {//for nodes other than first
 			last.next = node;
 		}
 		last = node;
-		document.getElementById('data').value = "";
+		document.getElementById("data").value = "";
 	} else {
 		alert("data can't be empty");
 	}
@@ -34,6 +34,7 @@ function printList()
 	//to get element having id print
 	var tag = document.getElementById("print");
 	tag.innerHTML = "";
+	//to diplay the list in the div
 	while(temp != null)
 	{
 		var div = document.createElement("div");
