@@ -22,7 +22,7 @@
 		
 		/**
 		 *function to validate the name field
-		 *@param - text in the name field
+		 *param - text in the name field
 		 */
 		function validateName(value){
 			/*name entered should contain only chars and should 
@@ -45,7 +45,7 @@
 
 		/**
 		 *function to validate the email field
-		 *@param - text in the email field
+		 *param - text in the email field
 		 */
 		function validateEmail(value){
 			
@@ -69,7 +69,7 @@
 
 		/**
 		 *function to validate the option field
-		 *@param - selected option from the list
+		 *param - selected option from the list
 		 */
 		function validateSelect(value){
 			
@@ -82,7 +82,7 @@
 
 		/**
 		 *function to validate the organization name field
-		 *@param - text in the organization name field
+		 *param - text in the organization name field
 		 */
 		function validateOrganization(value){
 			//organization name entered should follow the pattern given below(all chars only)
@@ -104,7 +104,7 @@
 		
 		/**
 		 *function to validate the contact field
-		 *@param - text in the contact field
+		 *param - text in the contact field
 		 */
 		function validateContact(value){
 			//contact entered should follow the pattern given below(all digits only)
@@ -125,7 +125,7 @@
 		}
 		/**
 		 *function to validate the text area field
-		 *@param - text in the text area field
+		 *param - text in the text area field
 		 */
 		function validateTextarea(value){
 			//checks the length of string in text area
