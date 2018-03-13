@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<!--header starts-->
+<head>
+	<title>Geolocation API</title>
+	<meta name = "author" content = "Akshita Dixit">
+	
+	<!--script for web page-->
+	<script>
+		var x = document.getElementById("demo");
+
+		/*method to find latitude and longitude using HTML5 geolocation API*/
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+				x.innerHTML = "Geolocation is not supported by this browser.";
+			}
+		}
+
+		/*method to print latitude and longitude*/
+		function showPosition(position) {
+			x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+		}
+	</script>
+</head>
+	
+<!--body starts-->
+<body>
+	<p>Click the button to get your co-ordinates.</p>
+	<button onclick="getLocation()">Try It</button>
+	<p id="demo"></p>
+
+</body>
+</html>
