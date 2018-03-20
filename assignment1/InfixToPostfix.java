@@ -1,17 +1,15 @@
 package assignment1;
 
-
 /**
  * this class is used to convert infix to postfix expression 
  * @author Akshita Dixit
  */
-
 public class InfixToPostfix {
 
 /**
  * this function is used to convert infix to post fix
  * @param infixExp - the infix expression to be changed
- * @return 
+ * @return postfix expression
  */
 String infixToPostfix(String infixExp) {
 
@@ -41,27 +39,26 @@ for(int i = 0; i < infixExp.length(); i++) {
 	}
 	stack.pop();
 	} else {
-
 		//check the precedence to pop out
 		while (stack.top != null && precedence(c) <= precedence(stack.top.data)) {
-    postfixExp += stack.pop();
+   			 postfixExp += stack.pop();
 		}
-stack.push(c);
+	stack.push(c);
 	}
 }
 
-	//pop out all remaining elements if the input string is empty
+//pop out all remaining elements if the input string is empty
 while (stack.top != null) {
     postfixExp += stack.pop();
 }
-
 return postfixExp;
 }
 
 /**
  * this function is used to return the precedence of each operator
+ * greater no means greater priority
  * @param c - operator
- * @return
+ * @return precedence
  */
 private int precedence(char c) {
 
