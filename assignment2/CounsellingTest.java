@@ -17,11 +17,10 @@ import org.junit.Test;
 public class CounsellingTest {
 	
 	//queue for candidates
-	QueueImplementation candidateQueue;
+	QueueImplementation<Candidate> candidateQueue;
 	//list of colleges
 	List<College> collegeList;
 	//updated list of candidates
-	QueueImplementation allottedColleges;
 	//object of counselling
 	Counselling c;
 	
@@ -31,7 +30,7 @@ public class CounsellingTest {
 	@Before
 	public void init() {
 		
-		candidateQueue = new QueueImplementation();
+		candidateQueue = new QueueImplementation<>();
 		Candidate c1 = new Candidate("akshita", 10);
 		candidateQueue.enqueue(c1);
 		Candidate c2 = new Candidate("saloni", 2);
@@ -68,7 +67,6 @@ public class CounsellingTest {
 		College clg5 = new College("clg 5", 0);
 		collegeList.add(clg5);
 		
-		allottedColleges = new QueueImplementation();
 		
 		c = new Counselling();
 	}
