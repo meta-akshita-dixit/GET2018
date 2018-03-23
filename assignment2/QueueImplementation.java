@@ -7,17 +7,17 @@ import java.util.Arrays;
  * @author Akshita Dixit
  *
  */
-public class QueueImplementation {
+public class QueueImplementation<T> {
 	
 	//array of object type
-	Object[] queueArray ;
+	T[] queueArray ;
 	int rear, front;
 	
 	/**
 	 * constructor to initialize array and front and rear
 	 */
 	public QueueImplementation() {
-		queueArray = new Object[0];
+		queueArray = (T[]) new Object[0];
 		 this.front = -1;
 		 this.rear = -1;
 	}
@@ -26,10 +26,10 @@ public class QueueImplementation {
 	 * method to add element in the queue
 	 * @param item -object to be added
 	 */
-	public void enqueue(Object item) {
+	public void enqueue(T item) {
 
 		//new temporary array
-		Object[] newArray;
+		T[] newArray;
 		
 	    //copies existing array to temp array
 		newArray = Arrays.copyOf(queueArray, queueArray.length+1);
@@ -52,9 +52,9 @@ public class QueueImplementation {
 	  * method to remove element from the queue
 	  * @return object dequeued
 	  */
-	 public Object dequeue() {
+	 public T dequeue() {
 		 
-		Object item = new Object();
+		T item = null;
 		
 		//boundary condition
 		if(front == -1 || front > rear) {
@@ -70,9 +70,9 @@ public class QueueImplementation {
 	  * method to get the object at front of queue
 	  * @return object at front
 	  */
-	 public Object getFront( ) {
+	 public T getFront( ) {
 		 
-		 Object item = new Object();
+		 T item = null;
 		 
 		//boundary condition
 		 if(front == -1 || front > rear) {
@@ -116,17 +116,36 @@ public class QueueImplementation {
 	   * @param index - position of element to be searched
 	   * @return
 	   */
-	  public Object getElement(int index) {
+	  public T getElement(int index) {
 		  
 		  return queueArray[index];
 	  }
 	  
 	  /**
 	   * method to get the queue of objects
+	   * and copy it in another array
 	   * @return
 	   */
-	  public Object[] getQueue() {
+	  public T[] getQueue(T[] arr) {
+		  for(int i = 0; i < this.queueArray.length; i++) {
+			  arr[i] = this.queueArray[i];
+		  }
+		  return arr;
+	  }
+	  
+	  /**
+	   * method to get the queue of objects for direct implementation 
+	   * @return array
+	   */
+	  public T[] getQueue() {
 		  return this.queueArray;
 	  }
-
+	  
+	  /**
+	   * method to get size of queue
+	   * @return length of queue
+	   */
+	  public int size() {
+		  return this.queueArray.length;
+	  }
 }
